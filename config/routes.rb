@@ -1,6 +1,12 @@
 Srctwit::Application.routes.draw do
-  devise_for :users
+  get "dashboard/index"
 
+  devise_for :users do
+    get "login", :to => "devise/sessions#new"
+    get "logout", :to => "devise/sessions#destroy"
+    get "register", :to => "devise/registrations#new"
+  end
+  root :to => "dashboard#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
