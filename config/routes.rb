@@ -1,4 +1,6 @@
 Srctwit::Application.routes.draw do
+  resources :posts, :only => [:new, :create, :destroy]
+
   get "dashboard/index"
 
   devise_for :users do
