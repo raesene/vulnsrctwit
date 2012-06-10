@@ -1,6 +1,9 @@
 Srctwit::Application.routes.draw do
-  resources :posts, :only => [:new, :create, :destroy]
+  get "users/index"
 
+  resources :posts, :only => [:new, :create, :destroy]
+  resources :followings, :only => [:create, :destroy]
+  resources :users, :only => [:index]
   get "dashboard/index"
 
   devise_for :users do

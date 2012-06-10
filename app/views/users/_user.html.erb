@@ -1,0 +1,10 @@
+<% unless user == current_user %>
+  <li>
+    @<%= user.username %> - following <%= user.follows.count %>, followed by <%= user.followings.count %>
+    <% if current_user.follows.include?(user) %>
+      <%= link_to "unfollow", user.followings & current_user.followeds, :method => :delete, :prompt => "Are you Sure?" %>
+    <% else %>
+      <%= link_to "follow", followings_path(:follow => user.id), :method => :post %>
+    <% end %>
+  </li>
+<% end %>
