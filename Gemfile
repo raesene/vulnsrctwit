@@ -11,6 +11,7 @@ gem 'devise'
 gem 'geocoder'
 gem 'girl_friday'
 gem 'unicorn'
+gem 'pubnub'
 
 # Gems used only for assets and not required
 # in production environments by default.

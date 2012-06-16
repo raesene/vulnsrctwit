@@ -20,6 +20,8 @@ class Post < ActiveRecord::Base
 
   validates :body, :length => 1..140, :presence => true
 
+  has_many :mentions
+  has_many :mentionings, :through => :mentions, :source => :user
 
   def ip_address
     @ip_address ||= nil
@@ -31,15 +33,12 @@ class Post < ActiveRecord::Base
 
   serialize :tag_list
   before_save :generate_taglist
-  after_commit :process_tags
+
 
   private
   def generate_taglist
     self.tag_list = self.body.scan(/\B#(w*[A-Za-z0-9_]+w*)/).flatten
   end
 
-  def process_tags
-    TAG_PROCESSOR.push(:post_id => self.id)
-  end
 
 end

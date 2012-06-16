@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  broadcastable_id: 1
+  broadcastable_type: MyString
+  channel_ident: MyString
+  last_validated: 2012-06-15 21:36:41
+
+two:
+  broadcastable_id: 1
+  broadcastable_type: MyString
+  channel_ident: MyString
+  last_validated: 2012-06-15 21:36:41

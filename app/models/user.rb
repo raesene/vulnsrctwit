@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   has_many :follows, :through => :followeds, :source => :user
   has_many :followings
   has_many :followers, :through => :followings
+  has_many :mentions
+  has_many :mentioned_ins, :through => :mentions, :source => :post
+  has_one :channel, :as => :broadcastable
 
   def timeline
     Post.includes(:user).where(:user_id => Following.where(:follower_id => self.id).collect(&:user_id) << self.id).order("created_at DESC")

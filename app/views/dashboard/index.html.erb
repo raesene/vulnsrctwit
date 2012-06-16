@@ -5,3 +5,10 @@
 </ul>
 <%= link_to "create a new post", new_post_path %>
 <%= link_to "Find People", users_path %>
+<script>
+  PUBNUB.subscribe ({
+      channel     : "<%= Digest::SHA1::hexdigest(current_user.username + current_user.created_at.to_s) %>",
+      callback     : function(message) {alert(message)}
+
+  })
+</script>
