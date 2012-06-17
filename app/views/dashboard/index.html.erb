@@ -1,14 +1,4 @@
-<h1>Welcome <%= current_user.username %></h1>
-<p><%= current_user.try(:description) %></p>
-<ul>
-<%= render @posts %>
-</ul>
-<%= link_to "create a new post", new_post_path %>
-<%= link_to "Find People", users_path %>
-<script>
-  PUBNUB.subscribe ({
-      channel     : "<%= Digest::SHA1::hexdigest(current_user.username + current_user.created_at.to_s) %>",
-      callback     : function(message) {alert(message)}
-
-  })
-</script>
+<h3>Latest Posts</h3>
+<div id="timeline">
+  <%=  render @posts %>
+</div>
