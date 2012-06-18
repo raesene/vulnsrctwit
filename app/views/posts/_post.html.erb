@@ -1,5 +1,5 @@
 <blockquote>
-  <p><%= post.body %></p>
+  <p><%= raw(post.body) %></p>
   <small>
     <% if post.user == current_user %>
         You
