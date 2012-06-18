@@ -1,0 +1,1 @@
+Just a test application that I'm doing.  It's based on the excellent chatter tutorial from J G Maxwell (http://jgwmaxwell.com/building-chatter-a-twitter-type-application-in-ruby-on-rails-introduction/) with some added security issues by me, to help in tools testing.
