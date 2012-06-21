@@ -1,5 +1,5 @@
 <ul>
 <% @users.each do |user| %>
-  <li><%= user.username %> - <%= link_to 'edit', :controller => 'totally_hidden_admin', :action => 'edit', :id => user.id %></li>
+  <li><%= user.username %> -<% if user.admin? %> "User is an Admin" <% end %> - <%= link_to 'edit', :controller => 'totally_hidden_admin', :action => 'edit', :id => user.id %></li>
 <% end %>
 

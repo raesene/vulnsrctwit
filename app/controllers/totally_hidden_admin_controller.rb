@@ -13,7 +13,7 @@ def update
   @user = User.find(params[:id])
 
   respond_to do |format|
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(params[:user], :without_protection => true)
       format.html { redirect_to :action => :index, notice: 'User was successfully updated.' }
       format.json { head :no_content }
     else
