@@ -1,0 +1,2 @@
+module TotallyHiddenAdminHelper
+end

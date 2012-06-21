@@ -4,6 +4,8 @@ Srctwit::Application.routes.draw do
   resources :posts, :only => [:new, :create, :destroy]
   resources :followings, :only => [:create, :destroy]
   resources :users, :only => [:index]
+  match "totally_hidden_admin/:id", :to => "totally_hidden_admin#update", :via => "post"
+  resources :totally_hidden_admin
   get "dashboard/index"
 
   devise_for :users do
