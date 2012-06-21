@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :description, :username
+  #attr_accessible :email, :password, :password_confirmation, :remember_me, :description, :username
   # attr_accessible :title, :body
   #Deliberately only protecting a method I don't care about to induce a mass assignment issue
   #attr_protected :longitude
